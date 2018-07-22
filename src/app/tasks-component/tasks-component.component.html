@@ -1,0 +1,20 @@
+<div>
+  <table class="table-simple">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Start</th>
+        <th>Finished</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of listTask">
+        <td>{{task.name}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.startDateAt}}</td>
+        <td>{{task.finishedDateAt}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
