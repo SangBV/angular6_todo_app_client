@@ -1,4 +1,4 @@
-export interface TaskViewModel {
+export class TaskViewModel {
     id: string
     name: string
     description: string
