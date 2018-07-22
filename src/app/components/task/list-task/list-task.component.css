@@ -1,21 +1,12 @@
-.table-simple{
-    font-family: Arial, Helvetica, sans-serif;
+.list-task{
+    width: 90%;
     margin: 0 auto;
-    width: 75%;
-    border-collapse: collapse;
-}
-.table-simple thead{
-    background-color: rgb(60, 74, 196);
-    font-size: 16px;
-    color: aliceblue;
-}
-.table-simple thead th{
-    height: 30px;
-}
-.table-simple tbody td{
-    height: 25px;
-    padding: 5px 0;
-    border: #000000 1px solid;
-    vertical-align: center;
 }
 
+table {
+    width: 100%;
+}
+  
+th.mat-sort-header-sorted {
+    color: black;
+}
