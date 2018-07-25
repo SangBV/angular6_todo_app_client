@@ -7,23 +7,31 @@ import { TaskService } from './core/services/task.service';
 import { ListTaskComponent } from './components/task/list-task/list-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatSortModule, MatTableModule, MatMenuModule, MatProgressSpinnerModule } from '@angular/material';
-import { LayoutModule } from '../../node_modules/@angular/cdk/layout';
 import { FormsModule, ReactiveFormsModule } from '../../node_modules/@angular/forms';
+import { TaskDetailComponent } from './components/task/task-detail/task-detail.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListTaskComponent
+    ListTaskComponent,
+    TaskDetailComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
+    AppRoutingModule,
+    RouterModule,
     BrowserAnimationsModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+
+    MatListModule,
+    MatSidenavModule,
     MatCardModule,
     MatProgressSpinnerModule,
     MatMenuModule,

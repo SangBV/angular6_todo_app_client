@@ -1,0 +1,13 @@
+<div *ngIf="taskDetail; else notFoundTask" >
+  <p>Name: {{taskDetail.name}}</p>
+  <p>Description: {{taskDetail.description}}</p>
+  <p>Start Date: {{taskDetail.startDateAt}}</p>
+  <p>Finish Date: {{taskDetail.finishedDateAtnish}}</p>
+</div>
+<ng-template #notFoundTask>
+  <p>Task Not Found !</p>
+</ng-template>
+
+<div>
+  <a routerLink="/tasks" title="Go back to list task">Go back to list task</a>
+</div>

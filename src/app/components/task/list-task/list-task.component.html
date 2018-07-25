@@ -23,6 +23,14 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Finish Date </th>
       <td mat-cell *matCellDef="let element"> {{element.finishedDateAt}} </td>
     </ng-container>
+    
+    <!-- Finish Date Column -->
+    <ng-container matColumnDef="tools">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tools </th>
+      <td mat-cell *matCellDef="let element">
+        <a routerLink="/tasks/{{element.id}}" title="Edit Task">Edit</a>
+      </td>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

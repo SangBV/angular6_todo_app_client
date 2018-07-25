@@ -20,7 +20,10 @@ export class TaskService {
         return this.http.get<TaskViewModel[]>(API_BASE_URL + API_GET_TASKS)
             .catch(this.handleError);
     }
-
+    getDetailTask(id: string): Observable<TaskViewModel>{
+        return this.http.get<TaskViewModel>(API_BASE_URL + API_GET_TASKS + '/' + id)
+            .catch(this.handleError);
+    }
     private handleError(error: Response | any) {
         console.error('ApiService::handleError', error);
         return Observable.throw(error);
