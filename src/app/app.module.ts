@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { TaskService } from './core/services/task.service';
 import { ListTaskComponent } from './components/task/list-task/list-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule, MatFormFieldModule, MatSelectModule, MatInputModule, MatSortModule, MatTableModule, MatMenuModule, MatProgressSpinnerModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '../../node_modules/@angular/forms';
 import { TaskDetailComponent } from './components/task/task-detail/task-detail.component';
 import { RouterModule } from '@angular/router';
@@ -28,21 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-
-    MatListModule,
-    MatSidenavModule,
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatMenuModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatSortModule,
-    MatTableModule
+    HttpClientModule
   ],
   providers: [
     TaskService

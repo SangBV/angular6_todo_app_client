@@ -9,6 +9,7 @@ import { TaskViewModel } from '../../../Models/task.model';
   styleUrls: ['./task-detail.component.css']
 })
 export class TaskDetailComponent implements OnInit {
+  taskTypeMethod: string;
   taskDetail : TaskViewModel;
   taskId: string;
   
@@ -23,10 +24,19 @@ export class TaskDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getHero();
+    this.checkTaskTypeMethod();
   }
 
   getHero(): void {
     this.taskService.getDetailTask(this.taskId)
       .subscribe(task => this.taskDetail = task);
+  }
+
+  checkTaskTypeMethod(): void{
+    if(this.taskId != null){
+      this.taskTypeMethod = "Update";
+    }else{
+      this.taskTypeMethod = "Create";
+    }
   }
 }
