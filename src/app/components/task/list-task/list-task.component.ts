@@ -14,8 +14,6 @@ import { Router } from '../../../../../node_modules/@angular/router';
 
 export class ListTaskComponent implements OnInit {
   listTask: TaskViewModel[];
-  displayedColumns: string[] = ['name', 'description', 'startDateAt', 'finishDateAt', 'tools'];
-  dataSource = new MatTableDataSource([]);
 
   @ViewChild(MatSort) sort: MatSort;
 
@@ -26,14 +24,12 @@ export class ListTaskComponent implements OnInit {
 
   ngOnInit() {
     this.getAllTask();
-    this.dataSource.sort = this.sort;
   }
 
   getAllTask(): void {
     this.taskService.getAllTask().subscribe(
       dataResponse => {
         this.listTask = dataResponse;
-        this.dataSource = new MatTableDataSource(this.listTask)
       }
     );
   }

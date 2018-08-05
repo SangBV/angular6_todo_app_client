@@ -1,39 +1,44 @@
-<div class="container" *ngIf="taskDetail; else notFoundTask">
-  <div class="row">
-    <form class="form-horizontal col-md-12" role="form">
-      <div class="form-group">
-        <label for="contain">Name</label>
-        <input class="form-control" type="text" value="{{taskDetail.name}}" />
-      </div>
-      <div class="form-group">
-        <label for="contain">Description</label>
-        <input class="form-control" type="text" value="{{taskDetail.description}}" />
-      </div>
-      <div class="form-group">
-        <label for="contain">Start Date</label>
-        <input class="form-control" type="text" value="{{taskDetail.startDateAt}}" />
-      </div>
-      <div class="form-group">
-        <label for="contain">Finish Date</label>
-        <input class="form-control" type="text" value="{{taskDetail.finishedDateAt}}" />
-      </div>
-    </form>
-    <div class="clearfix"></div>
-  </div>
+<div class="container">
+  <form #formCreateTask="ngForm" *ngIf="taskDetail; else notFoundTask">
+    <div class="row">
+      <form class="form-horizontal col-md-12" role="form">
+        <div class="form-group">
+          <label for="contain">Name</label>
+          <input class="form-control" type="text" placeholder="Name" name="name" ngModel="{{taskDetail.name}}" />
+        </div>
+        <div class="form-group">
+          <label for="contain">Description</label>
+          <input class="form-control" type="text" placeholder="Description" name="description" ngModel="{{taskDetail.description}}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="contain">Start Date</label>
+          <input class="form-control" type="text" placeholder="Start Date" name="startDateAt" ngModel="{{taskDetail.startDateAt | date: 'dd/MM/yyyy' }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="contain">Finish Date</label>
+          <input class="form-control" type="text" placeholder="Finished Date" name="finishedDateAt" ngModel="{{taskDetail.finishedDateAt| date: 'dd/MM/yyyy' }}"
+          />
+        </div>
+      </form>
+      <div class="clearfix"></div>
+    </div>
+  </form>
+  <ng-template #notFoundTask>
+    <div class="alert alert-danger">
+      <p class="text-danger">Task Not Found!</p>
+    </div>
+  </ng-template>
 </div>
 <div class="container">
   <div class="row">
     <div class="col-md-2">
       <a routerLink="/tasks" class="btn btn-primary" title="Go back to list task">Go back</a>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2" *ngIf="taskDetail" >
       <a href="javascript:void(0)" class="btn btn-success" title="{{taskTypeMethod}}">{{taskTypeMethod}}</a>
     </div>
     <div class="clearfix"></div>
   </div>
-
 </div>
-
-<ng-template #notFoundTask>
-  <p>Task Not Found !</p>
-</ng-template>

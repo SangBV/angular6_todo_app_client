@@ -1,24 +1,33 @@
-<div class="list-task">
-  <table class="table table-striped">
-    <thead>
-      <tr>
+<div class="task-display">
+  <div class="container btn-box">
+    <div class="row">
+      <div class="col-md-4">
+        <a routerLink="/tasks/create" class="btn btn-success" title="Add new task">Add New</a>
+      </div>
+    </div>
+  </div>
+  <div class="list-task">
+    <table class="table table-striped">
+      <thead>
+        <tr>
           <th>Name</th>
           <th>Description</th>
           <th>Start Date</th>
           <th>Finish Date</th>
           <th>Tools</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let task of listTask" >
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of listTask">
           <td>{{task.name}}</td>
           <td>{{task.description}}</td>
-          <td>{{task.startDateAt}}</td>
-          <td>{{task.finishedDateAt}}</td>
+          <td>{{task.startDateAt | date: 'dd/MM/yyyy' }}</td>
+          <td>{{task.finishedDateAt | date: 'dd/MM/yyyy' }}</td>
           <td>
-              <a routerLink="/tasks/{{task.id}}" title="Edit Task">Edit</a>
+            <a routerLink="/tasks/update/{{task.id}}" title="Edit Task">Edit</a>
           </td>
-      </tr>
-    </tbody>
-  </table>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

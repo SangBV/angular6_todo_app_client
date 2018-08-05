@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '../../../../../node_modules/@angular/router';
 import { TaskService } from '../../../core/services/task.service';
 import { TaskViewModel } from '../../../Models/task.model';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-task-detail',
@@ -10,13 +11,13 @@ import { TaskViewModel } from '../../../Models/task.model';
 })
 export class TaskDetailComponent implements OnInit {
   taskTypeMethod: string;
-  taskDetail : TaskViewModel;
+  taskDetail: TaskViewModel;
   taskId: string;
-  
+
   constructor(
     private route: ActivatedRoute,
     private taskService: TaskService,
-  ) { 
+  ) {
     let sub = this.route.params.subscribe((params: Params) => {
       this.taskId = params['id'];
     })
@@ -32,11 +33,11 @@ export class TaskDetailComponent implements OnInit {
       .subscribe(task => this.taskDetail = task);
   }
 
-  checkTaskTypeMethod(): void{
-    if(this.taskId != null){
+  checkTaskTypeMethod(): void {
+    if (this.taskId != null) {
       this.taskTypeMethod = "Update";
     }else{
-      this.taskTypeMethod = "Create";
+      this.taskTypeMethod = "Add new";
     }
   }
 }

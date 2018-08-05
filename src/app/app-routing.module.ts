@@ -5,7 +5,8 @@ import { TaskDetailComponent } from './components/task/task-detail/task-detail.c
 
 const routes: Routes = [
   { path: 'tasks', component: ListTaskComponent },
-  { path: 'tasks/:id', component: TaskDetailComponent},
+  { path: 'tasks/update/:id', component: TaskDetailComponent},
+  { path: 'tasks/create', component: TaskDetailComponent},
   { path: '', redirectTo: '/tasks', pathMatch: 'full' }
 ];
 
